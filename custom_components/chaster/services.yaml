@@ -1,0 +1,121 @@
+add_time:
+  name: Add lock time
+  description: Add seconds to a Chaster lock, subject to Chaster permissions.
+  fields:
+    lock_id:
+      name: Lock ID
+      description: Chaster lock identifier.
+      required: true
+      selector:
+        text:
+    seconds:
+      name: Seconds
+      description: Number of seconds to add.
+      required: true
+      selector:
+        number:
+          mode: box
+          min: 1
+          max: 31536000
+          step: 1
+
+remove_time:
+  name: Remove lock time
+  description: Remove seconds from a Chaster lock, subject to Chaster permissions.
+  fields:
+    lock_id:
+      name: Lock ID
+      description: Chaster lock identifier.
+      required: true
+      selector:
+        text:
+    seconds:
+      name: Seconds
+      description: Number of seconds to remove.
+      required: true
+      selector:
+        number:
+          mode: box
+          min: 1
+          max: 31536000
+          step: 1
+
+lock_action:
+  name: Lock action
+  description: Call a supported Chaster lock action endpoint.
+  fields:
+    lock_id:
+      name: Lock ID
+      required: true
+      selector:
+        text:
+    path:
+      name: API path
+      description: Path may contain {lock_id} and must begin with /.
+      required: true
+      selector:
+        text
+    method:
+      name: HTTP method
+      required: false
+      default: POST
+      selector:
+        select:
+          options:
+            - POST
+            - PUT
+            - PATCH
+            - DELETE
+    body:
+      name: JSON body
+      required: false
+      selector:
+        object:
+
+send_message:
+  name: Send Chaster message
+  description: Send a message using a Chaster conversation endpoint.
+  fields:
+    path:
+      name: API path
+      description: Defaults to /conversations for creating a conversation.
+      required: false
+      selector:
+        text
+    body:
+      name: JSON body
+      required: true
+      selector:
+        object
+
+api_request:
+  name: Chaster API request
+  description: Call any Chaster Public API endpoint available to the authenticated token.
+  fields:
+    method:
+      name: HTTP method
+      required: true
+      selector:
+        select:
+          options:
+            - GET
+            - POST
+            - PUT
+            - PATCH
+            - DELETE
+    path:
+      name: API path
+      description: Path beginning with /.
+      required: true
+      selector:
+        text
+    params:
+      name: Query parameters
+      required: false
+      selector:
+        object
+    body:
+      name: JSON body
+      required: false
+      selector:
+        object
