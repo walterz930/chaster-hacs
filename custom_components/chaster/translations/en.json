@@ -1,0 +1,44 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "This Chaster account is already configured.",
+      "reauth_failed": "The Chaster configuration could not be reauthenticated.",
+      "reauth_successful": "Chaster was reauthenticated successfully."
+    },
+    "error": {
+      "invalid_token": "Enter a developer token.",
+      "cannot_connect": "Unable to connect to Chaster or the token was rejected."
+    },
+    "step": {
+      "user": {
+        "title": "Connect Chaster",
+        "description": "Enter your Chaster developer token.\n\nHow to get one:\n1. Open the Chaster developer area at {developers_url} and request API access if you have not already been approved.\n2. After approval, open the Chaster Developer interface.\n3. Create or open an application.\n4. Select Tokens in the left sidebar.\n5. Click Generate a developer token and copy the token.\n\nNo OAuth login, client ID, client secret, or browser redirect is required. Keep the token secret.",
+        "data": {
+          "token": "Developer token"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Reauthenticate Chaster",
+        "description": "Your Chaster developer token is no longer valid. Enter a replacement token.",
+        "data": {
+          "token": "Developer token"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Chaster settings",
+        "data": {
+          "scan_interval": "Polling interval (seconds)",
+          "role_mode": "Role mode",
+          "enable_keyholder": "Enable keyholder features",
+          "enable_shared_locks": "Enable shared locks",
+          "enable_messaging": "Enable messaging",
+          "enable_lock_actions": "Enable lock actions"
+        }
+      }
+    }
+  }
+}
