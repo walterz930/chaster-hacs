@@ -1,0 +1,7 @@
+{
+  "name": "Chaster",
+  "content_in_root": false,
+  "filename": "chaster",
+  "render_readme": true,
+  "homeassistant": "2024.1.0"
+}
